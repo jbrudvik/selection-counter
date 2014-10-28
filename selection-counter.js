@@ -47,7 +47,7 @@
     });
 
     // Listen for messages from other parts of the extension to start/stop selection listening
-    if (chrome) {
+    if (typeof chrome !== 'undefined') {
       chrome.runtime.onMessage.addListener(function (message) {
         if (self.active && message.toggle) {
           self.selectionListener.toggle();
@@ -63,7 +63,7 @@
           }
         }
       });
-    } else if (safari) {
+    } else if (typeof safari !== 'undefined') {
       safari.self.addEventListener('message', function (message) {
         if (message.name === 'toggle') {
           self.selectionListener.toggle();
