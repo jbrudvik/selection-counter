@@ -1,0 +1,12 @@
+{
+  "name": "selection-counter",
+  "main": "selection-counter.js",
+  "dependencies": {
+    "jquery": "2.*",
+    "pluralize": "1.*",
+    "selection-listener": "0.*",
+    "periphery-label": "0.*"
+  },
+  "keywords": ["selection", "count", "counter", "text", "character", "word"],
+  "ignore": [".jshintrc", ".gitignore"]
+}
