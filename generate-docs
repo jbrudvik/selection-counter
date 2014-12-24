@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
+shopt -s nullglob
+shopt -s dotglob
+
+dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+pushd "${dir}" > /dev/null
 cat header.md <(echo) <(dox -aS < *.js | tail -n+2) <(echo) footer.md > README.md 2> /dev/null
