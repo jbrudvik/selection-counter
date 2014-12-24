@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cat header.md <(echo) <(dox -aS < *.js | tail -n+2) <(echo) footer.md > README.md 2> /dev/null
