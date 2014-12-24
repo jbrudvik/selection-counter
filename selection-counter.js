@@ -4,21 +4,24 @@
 
 (function (window, document, undefined) {
 
-  /*
+  /**
    * Watches the current selection and displays a count of a noun in a label.
    *
    * If multiple SelectionCounter instances exist, they will be grouped together.
    *
    * If instantiated in a browser extension context (e.g., safari, chrome), will
    * listen for messages:
-   * - Chrome: message.toggle will toggle state, message.active (boolean) will set state
-   * - Safari: event.name === 'toggle' will toggle state, (event.name === 'active' && event.message) will set state
+   *
+   * - Chrome: `message.toggle` will toggle state, `message.active` (boolean) will set state
+   * - Safari: `event.name === 'toggle'` will toggle state, `event.name === 'active' && event.message` will set state
    *
    * And may send messages to browser runtime / tab:
-   * - Chrome: sendMessage({ active: false }) when deactivated, sendMessage({ active: true }) when activated
-   * - Safari: dispatchMessage('active', false) when deactivated, dispatchMessage('active', true) when activated
+   *
+   * - Chrome: `sendMessage({ active: false })` when deactivated, `sendMessage({ active: true })` when activated
+   * - Safari: `dispatchMessage('active', false)` when deactivated, `dispatchMessage('active', true)` when activated
    *
    * Parameters:
+   *
    * - countedNoun (string): Thing to be counted. Options: "character", "word". (default: "character")
    */
   function SelectionCounter(countedNoun) {
@@ -96,14 +99,14 @@
     });
   }
 
-  /*
+  /**
    * Start counter
    */
   SelectionCounter.prototype.start = function () {
     this.active = true;
   };
 
-  /*
+  /**
    * Stop counter
    */
   SelectionCounter.prototype.stop = function () {
