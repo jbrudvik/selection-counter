@@ -1,4 +1,4 @@
 # Generating documentation
 
     $ npm install -g dox
-    $ ./generate-docs
+    $ ./generate-docs > README.md
