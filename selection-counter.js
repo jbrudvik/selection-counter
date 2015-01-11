@@ -22,7 +22,9 @@
    *
    * Parameters:
    *
-   * - countedNoun (string): Thing to be counted. Options: "character", "word". (default: "character")
+   * - countedNoun (String): Thing to be counted. Options: "character", "word". (default: "character")
+   *
+   * @param {String} countedNoun
    */
   function SelectionCounter(countedNoun) {
     countedNoun = countedNoun || 'character';

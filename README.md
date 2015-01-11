@@ -1,11 +1,11 @@
 [![Build status](https://img.shields.io/travis/jbrudvik/selection-counter.svg)](https://travis-ci.org/jbrudvik/selection-counter)
 [![Bower version](http://img.shields.io/bower/v/selection-counter.svg)](https://github.com/jbrudvik/selection-counter)
 
-  - [SelectionCounter()](#selectioncounter)
+  - [SelectionCounter()](#selectioncountercountednounstring)
   - [SelectionCounter.start()](#selectioncounterstart)
   - [SelectionCounter.stop()](#selectioncounterstop)
 
-## SelectionCounter()
+## SelectionCounter(countedNoun:String)
 
   Watches the current selection and displays a count of a noun in a label.
   
@@ -24,7 +24,7 @@
   
   Parameters:
   
-  - countedNoun (string): Thing to be counted. Options: "character", "word". (default: "character")
+  - countedNoun (String): Thing to be counted. Options: "character", "word". (default: "character")
 
 ## SelectionCounter.start()
 
