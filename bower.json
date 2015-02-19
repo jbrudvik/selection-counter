@@ -8,5 +8,5 @@
     "periphery-label": "0.*"
   },
   "keywords": ["selection", "count", "counter", "text", "character", "word"],
-  "ignore": [".jshintrc", ".gitignore"]
+  "ignore": ["**/.*", "*.md", "generate-docs"]
 }
