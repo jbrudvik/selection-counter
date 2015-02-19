@@ -1,7 +1,4 @@
 
-/* global chrome:false, safari:false, $:false, pluralize:false, PeripheryLabel:false, SelectionListener:false */
-
-
 (function (window, document, undefined) {
 
   /**
