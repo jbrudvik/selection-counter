@@ -14,12 +14,12 @@
   "expr": true,
   "curly": false,
   "browser": true,
-  "predef": [
-    "chrome",
-    "safari",
-    "$",
-    "pluralize",
-    "PeripheryLabel",
-    "SelectionListener"
-  ]
+  "globals": {
+    "chrome": false,
+    "safari": false,
+    "$": false,
+    "pluralize": false,
+    "PeripheryLabel": false,
+    "SelectionListener": false
+  }
 }
