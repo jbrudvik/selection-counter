@@ -14,8 +14,8 @@
   If instantiated in a browser extension context (e.g., safari, chrome), will
   listen for messages:
   
-  - Chrome: `message.toggle` will toggle state, `message.active` (boolean) will set state
-  - Safari: `event.name === 'toggle'` will toggle state, `event.name === 'active' && event.message` will set state
+  - Chrome: `message.active` (boolean) will set state
+  - Safari: `event.name === 'active' && event.message` will set state
   
   And may send messages to browser runtime / tab:
   
