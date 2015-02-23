@@ -9,8 +9,8 @@
    * If instantiated in a browser extension context (e.g., safari, chrome), will
    * listen for messages:
    *
-   * - Chrome: `message.toggle` will toggle state, `message.active` (boolean) will set state
-   * - Safari: `event.name === 'toggle'` will toggle state, `event.name === 'active' && event.message` will set state
+   * - Chrome: `message.active` (boolean) will set state
+   * - Safari: `event.name === 'active' && event.message` will set state
    *
    * And may send messages to browser runtime / tab:
    *
@@ -51,12 +51,6 @@
     // Listen for messages from other parts of the extension to start/stop selection listening
     if (typeof chrome !== 'undefined') {
       chrome.runtime.onMessage.addListener(function (message) {
-        if (self.active && message.toggle) {
-          self.selectionListener.toggle();
-        }
-      });
-
-      chrome.runtime.onMessage.addListener(function (message) {
         if (self.active && message.active !== undefined) {
           if (message.active) {
             self.selectionListener.start();
@@ -66,12 +60,6 @@
         }
       });
     } else if (typeof safari !== 'undefined') {
-      safari.self.addEventListener('message', function (message) {
-        if (message.name === 'toggle') {
-          self.selectionListener.toggle();
-        }
-      }, false);
-
       safari.self.addEventListener('message', function (event) {
         if (self.active && event.name === 'active') {
           if (event.message) {
