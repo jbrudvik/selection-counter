@@ -26,6 +26,10 @@
   function SelectionCounter(countedNoun) {
     countedNoun = countedNoun || 'character';
 
+    // Browser context
+    this.isChrome = typeof chrome !== 'undefined';
+    this.isSafari = typeof safari !== 'undefined';
+
     this.countedNoun = countedNoun;
     this.active = false;
 
@@ -49,7 +53,7 @@
     });
 
     // Listen for messages from other parts of the extension to start/stop selection listening
-    if (typeof chrome !== 'undefined') {
+    if (this.isChrome) {
       chrome.runtime.onMessage.addListener(function (message) {
         if (self.active && message.active !== undefined) {
           if (message.active) {
@@ -59,7 +63,7 @@
           }
         }
       });
-    } else if (typeof safari !== 'undefined') {
+    } else if (this.isSafari) {
       safari.self.addEventListener('message', function (event) {
         if (self.active && event.name === 'active') {
           if (event.message) {
@@ -77,9 +81,9 @@
         self.selectionListener.stop();
 
         // Send message about deactivation to other parts of extension
-        if (chrome) {
+        if (self.isChrome) {
           chrome.runtime.sendMessage({ active: false });
-        } else if (safari) {
+        } else if (self.isSafari) {
           safari.self.tab.dispatchMessage('active', false);
         }
       }
