@@ -17,10 +17,7 @@
    * - Chrome: `sendMessage({ active: false })` when deactivated, `sendMessage({ active: true })` when activated
    * - Safari: `dispatchMessage('active', false)` when deactivated, `dispatchMessage('active', true)` when activated
    *
-   * Browser support:
-   *
-   * - Chrome
-   * - Safari
+   * Browser support: Chrome, Safari
    *
    * Parameters:
    *
