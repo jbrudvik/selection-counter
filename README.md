@@ -1,6 +1,8 @@
 [![Build status](https://img.shields.io/travis/jbrudvik/selection-counter.svg)](https://travis-ci.org/jbrudvik/selection-counter)
 [![Bower version](http://img.shields.io/bower/v/selection-counter.svg)](https://github.com/jbrudvik/selection-counter)
 
+Browser support: Chrome, Safari
+
 - [SelectionCounter()](#selectioncountercountednounstring)
 - [SelectionCounter.start()](#selectioncounterstart)
 - [SelectionCounter.stop()](#selectioncounterstop)
@@ -21,8 +23,6 @@ And may send messages to browser runtime / tab:
   
 - Chrome: `sendMessage({ active: false })` when deactivated, `sendMessage({ active: true })` when activated
 - Safari: `dispatchMessage('active', false)` when deactivated, `dispatchMessage('active', true)` when activated
-  
-Browser support: Chrome, Safari
   
 Parameters:
   
