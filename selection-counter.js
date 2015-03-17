@@ -74,20 +74,6 @@
         }
       }, false);
     }
-
-    // On ESC key down, deactivate the extension
-    $(document).on('keydown', function (event) {
-      if (self.active && event.which === 27) { // ESC key
-        self.selectionListener.stop();
-
-        // Send message about deactivation to other parts of extension
-        if (self.isChrome) {
-          chrome.runtime.sendMessage({ active: false });
-        } else if (self.isSafari) {
-          safari.self.tab.dispatchMessage('active', false);
-        }
-      }
-    });
   }
 
   /**
